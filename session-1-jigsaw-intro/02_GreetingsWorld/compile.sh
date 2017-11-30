@@ -14,7 +14,8 @@ runTree src
 echo ""
 echo "${info} *** Compiling module in folder $ORG_ASTRO_FOLDER *** ${normal}"
 javac -d $ORG_ASTRO_FOLDER \
-      [java source files (with path) in the module*]
+      src/org.astro/module-info.java \
+      src/org.astro/org/astro/World.java
 
 echo ""
 echo "${info} *** Displaying the contents (modules) of the '$ORG_ASTRO_FOLDER' folder *** ${normal}"
@@ -24,7 +25,8 @@ echo ""
 echo "${info} *** Compiling module in folder '$COM_GREETINGS_FOLDER' and linking it with module '$ORG_ASTRO_FOLDER' *** ${normal}"
 javac --module-path mods \
       -d $COM_GREETINGS_FOLDER \
-      [java source files (with path) in the module*]
+      src/com.greetings/module-info.java \
+      src/com.greetings/com/greetings/Main.java
 
 #
 # * check in the respective module folder for names of the source files, hint: should it also contain file with module information?
